@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CategoriasService {
 
-  categoriasURL = 'http://localhost:8080/categorias';
+  categoriasURL = 'http://localhost:4242/categorias';
   CategoriasURLFiltro= this.categoriasURL;
 
 
@@ -27,6 +27,8 @@ export class CategoriasService {
 
 
     return this.http.get<any>(this.CategoriasURLFiltro).toPromise();
+
+
   }
 
   excluir(id:number):Promise<void>{
@@ -34,6 +36,16 @@ export class CategoriasService {
   }
   adicionar(cat: Categoria): Promise<any>{
     return this.http.post(this.categoriasURL,cat).toPromise();
-  }
 
+
+  }
+  alterar(categoria: Categoria): Promise<any>{
+    return this.http.put(this.categoriasURL+'/'+categoria.id, categoria)
+    .toPromise();
+
+  }
+  buscarPorCodigo(codigo: number): Promise<Categoria> {
+    return this.http.get<Categoria>(this.categoriasURL+'/'+codigo).toPromise();
+  }
 }
+

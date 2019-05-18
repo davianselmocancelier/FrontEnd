@@ -15,6 +15,8 @@ import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 
 import {TooltipModule} from 'primeng/tooltip';
+import { RouterModule } from '@angular/router';
+
 
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-cadastro.component';
@@ -33,7 +35,9 @@ import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-ca
     TooltipModule,
     ConfirmDialogModule,
     ToastModule,
-    FormsModule
+    FormsModule,
+    RouterModule
+
   ],
   exports: [
     CategoriasPesquisaComponent,

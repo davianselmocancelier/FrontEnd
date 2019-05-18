@@ -39,7 +39,8 @@ rejectLabel="Não"></p-confirmDialog>
               <td class = "col-id">{{categoria.id}}</td>
               <td class = "col-id">{{categoria.nome}}</td>
               <td class = "col-acoes">
-                <button pButton icon="pi pi-pencil" pTooltip="Editar"  tooltipPosition="top" showDelay="1000"  class="ui-button-info"></button>
+                <button pButton icon="pi pi-pencil" pTooltip="Editar"  tooltipPosition="top" showDelay="1000"  class="ui-button-info" [routerLink]="['/categorias/',categoria.id]"></button>
+
                         <button pButton icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" showDelay="1000"  (click)="confirmaExclusao(categoria)" class="ui-button-danger"></button>
               </td>
             </tr>
@@ -49,7 +50,7 @@ rejectLabel="Não"></p-confirmDialog>
     </div>
 
     <div class = "ui-g-12">
-      <a pButton label = "Nova Categoria"></a>
+        <a pButton label="Nova Categoria" routerLink="/categorias/novo"></a>
     </div>
 
 
