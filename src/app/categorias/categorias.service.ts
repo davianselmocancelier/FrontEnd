@@ -18,12 +18,12 @@ export class CategoriasService {
   ) { }
 
   pesquisar(filtro:any):Promise<any>{
-    console.log('pesquisa' + filtro);
+
     if(filtro.nome){
       this.CategoriasURLFiltro = '/filtro?nome='+filtro.nome;
     }
       else{
-        console.log('else')
+
         this.CategoriasURLFiltro = this.categoriasURL;
       }
 
