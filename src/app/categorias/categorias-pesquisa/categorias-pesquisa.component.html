@@ -5,7 +5,7 @@ acceptLabel="Sim"
 rejectLabel="Não"></p-confirmDialog>
 
 <div class = "container">
-  <form autocomplete="=off" (ngsubmit)="pesquisar()">
+  <form autocomplete="=off" (ngsubmit)="pesquisar('infor')">
 
   <div class = "ui-g">
     <div class = "ui-g-12">
@@ -21,8 +21,8 @@ rejectLabel="Não"></p-confirmDialog>
       <button pButton type="submit" label = "Pesquisar"></button>
     </div>
   </div>
-
   </form>
+
     <div class = "ui-g">
       <div class = "ui-g-12">
         <p-table [value] = "categorias" [responsive] = "true" [paginator]="true" [rows]="3">
