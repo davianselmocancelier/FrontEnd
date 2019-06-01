@@ -19,16 +19,24 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 import {Routes, RouterModule} from '@angular/router';
 import { CategoriasPesquisaComponent } from './categorias/categorias-pesquisa/categorias-pesquisa.component';
 import { EstadosPesquisaComponent } from './estados/estados-pesquisa/estados-pesquisa.component';
+import { CidadesModule } from './cidades/cidades.module';
 
+import { ButtonModule } from 'primeng/button';
+
+import {SidebarModule} from 'primeng/sidebar';
+import { CidadesCadastroComponent } from './cidades/cidade-cadastro/cidade-cadastro.component';
 
 
 const rotas: Routes = [
+  {path: '', redirectTo:'categorias', pathMatch:'full'},
+  {path: 'cidades', component: CidadesCadastroComponent},
   {path: 'categorias', component: CategoriasPesquisaComponent},
   {path: 'categorias/novo', component: CategoriasCadastroComponent},
   {path: 'categorias/:id', component: CategoriasCadastroComponent},
   {path: 'estados', component: EstadosPesquisaComponent},
   {path: 'estados/novo', component: EstadosCadastroComponent},
   {path: 'estados/:id', component: EstadosCadastroComponent}
+
 ];
 
 
@@ -44,7 +52,10 @@ const rotas: Routes = [
     EstadosModule,
     HttpClientModule,
     ToastModule,
-    RouterModule.forRoot(rotas)
+    RouterModule.forRoot(rotas),
+    CidadesModule,
+    SidebarModule,
+    ButtonModule
 
   ],
   providers: [
